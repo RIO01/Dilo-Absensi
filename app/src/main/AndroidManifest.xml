@@ -3,6 +3,7 @@
     package="com.ooi.diloabsensi">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,7 +27,11 @@
         <activity android:name=".Berita" />
         <activity android:name=".DaftarHadir" />
         <activity android:name=".Absensi" />
-        <activity android:name=".MenuTab" android:theme="@style/AppTheme" android:label=" "></activity>
+        <activity
+            android:name=".MenuTab"
+            android:label=" "
+            android:theme="@style/AppTheme" />
+        <activity android:name=".IsiBerita"></activity>
     </application>
 
 </manifest>

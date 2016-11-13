@@ -1,6 +1,7 @@
 package com.ooi.diloabsensi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by edric on 11/12/2016.
@@ -53,16 +55,24 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.AcaraHolder>{
         holder.judul.setText(berita.get(position).getJudul());
         holder.tanggal.setText(berita.get(position).getTanggal());
         holder.deskripsi.setText(berita.get(position).getDeskripsi());
-        if(berita.get(position).getGambar()!=null && !berita.get(position).getGambar().isEmpty()){
-            Glide.with(context).load(berita.get(position).getGambar()).into(holder.gambar);
-        }
+        Glide.with(context).load(berita.get(position).getGambar()).placeholder(R.drawable.default_thumbnail).into(holder.gambar);
+
     }
 
     @Override
-    public AcaraHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AcaraHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.v_item,parent,false);
         AcaraHolder acaraHolder=new AcaraHolder(v);
         context=parent.getContext();
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(parent.getContext(),IsiBerita.class);
+                parent.getContext().startActivity(intent);
+            }
+        });
+
+
         return acaraHolder;
     }
 
