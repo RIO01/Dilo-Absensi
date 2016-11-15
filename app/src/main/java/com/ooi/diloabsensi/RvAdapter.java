@@ -62,12 +62,16 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.AcaraHolder>{
     @Override
     public AcaraHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.v_item,parent,false);
-        AcaraHolder acaraHolder=new AcaraHolder(v);
+        final AcaraHolder acaraHolder=new AcaraHolder(v);
         context=parent.getContext();
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(parent.getContext(),IsiBerita.class);
+                intent.putExtra("judul",berita.get(acaraHolder.getAdapterPosition()).getJudul());
+                intent.putExtra("tanggal",berita.get(acaraHolder.getAdapterPosition()).getTanggal());
+                intent.putExtra("gambar",berita.get(acaraHolder.getAdapterPosition()).getGambar());
+                intent.putExtra("deskripsi",berita.get(acaraHolder.getAdapterPosition()).getDeskripsi());
                 parent.getContext().startActivity(intent);
             }
         });

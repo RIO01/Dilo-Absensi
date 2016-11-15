@@ -4,4 +4,7 @@
     <string name="content">Content</string>
     <string name="format">Format</string>
     <string name="scan">Scan</string>
+    <string name="daftar">Daftar</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="waktu">Waktu</string>
 </resources>
