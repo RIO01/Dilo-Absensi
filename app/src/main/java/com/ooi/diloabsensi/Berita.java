@@ -103,7 +103,7 @@ public class Berita extends AppCompatActivity {
                     Log.d("RESPONSE","call cancelled");
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Error occured",5).show();
+                    Toast.makeText(getApplicationContext(),"Error occured",Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -14,4 +14,6 @@ import retrofit2.http.Query;
 public interface ApiInterface {
     @GET("acara")
     Call<List<BeritaClass>> getBeritaAcara();
+
+
 }
