@@ -7,4 +7,10 @@
     <string name="daftar">Daftar</string>
     <string name="tanggal">Tanggal</string>
     <string name="waktu">Waktu</string>
+    <string name="add">Add</string>
+    <string name="simpan">Simpan</string>
+    <string name="acara">Acara</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="gambar">Gambar</string>
+    <string name="upload">Upload</string>
 </resources>
